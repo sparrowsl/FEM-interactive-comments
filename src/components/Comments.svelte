@@ -4,7 +4,7 @@
   import Replies from "./Replies.svelte";
 
   let comments = data.comments;
-  console.log(data.currentUser)
+  console.log(data.currentUser);
 </script>
 
 <section>

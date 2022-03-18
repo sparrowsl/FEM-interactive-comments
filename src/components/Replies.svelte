@@ -1,12 +1,13 @@
 <script>
   import Comment from "./Comment.svelte";
   export let replies;
-  console.log(replies)
+  console.log(replies);
 </script>
 
 <section>
   {#each replies as reply}
-    <Comment imageURL={reply.user.image.png}
+    <Comment
+      imageURL={reply.user.image.png}
       username={reply.user.username}
       datePosted={reply.createdAt}
       text={reply.content}
@@ -16,7 +17,7 @@
 </section>
 
 <style>
-  section{
+  section {
     display: flex;
     flex-direction: column;
     gap: 1.5em;

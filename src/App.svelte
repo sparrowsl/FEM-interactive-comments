@@ -1,11 +1,5 @@
 <script>
-	// Import Components
 	import Comments from "./components/Comments.svelte";
-
-	// Variables
-	export let name = "Svelte";
-
-	// Functions
 </script>
 
 <main>
@@ -16,7 +10,6 @@
 	main {
 		padding: 1em;
 	}
-
 
 	/* // Small devices (landscape phones, 576px and up) */
 	@media (min-width: 576px) {

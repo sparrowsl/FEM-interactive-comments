@@ -62,14 +62,14 @@
 	.user-info {
 		display: flex;
 		align-items: center;
-		gap: 1.5em;
+		gap: 1em;
 	}
 	.user-tag {
 		display: inline-block;
 		background-color: hsl(238, 40%, 52%);
 		color: hsl(0, 0%, 100%);
 		font-weight: 500;
-		margin-inline: .25em 1.25em;
+		margin-inline: 0.25em 1.25em;
 		font-size: 1.2em;
 		padding: 0.2em 0.5em;
 		border-radius: 2px;
