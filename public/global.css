@@ -1,0 +1,89 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+/* Generic styles (reset) */
+*, *::after, *::before{
+	padding: 0;
+	bottom: 0;
+	box-sizing: border-box;
+}
+html, body {
+	position: relative;
+	height: 100%;
+}
+html{
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+body {
+	background-color: hsl(228, 33%, 97%);
+}
+
+/* a {
+	color: rgb(0,100,200);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	color: rgb(0,80,160);
+}
+
+label {
+	display: block;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	padding: 0.4em;
+	margin: 0 0 0.5em 0;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+input:disabled {
+	color: #ccc;
+}
+
+button {
+	color: #333;
+	background-color: #f4f4f4;
+	outline: none;
+}
+
+button:disabled {
+	color: #999;
+}
+
+button:not(:disabled):active {
+	background-color: #ddd;
+}
+
+button:focus {
+	border-color: #666;
+} */
+
+
+	/* // Small devices (landscape phones, 576px and up) */
+	@media (min-width: 576px) {
+	}
+
+	/* // Medium devices (tablets, 768px and up) */
+	@media (min-width: 768px) {
+	}
+
+	/* // Large devices (desktops, 992px and up) */
+	@media (min-width: 992px) {
+		main {
+			max-width: 1024px;
+		}
+	}
+
+	/* // Extra large devices (large desktops, 1200px and up) */
+	@media (min-width: 1200px) {
+	}
