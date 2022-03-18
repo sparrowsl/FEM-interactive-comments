@@ -1,25 +1,30 @@
 <script>
   import data from "../../data.json";
   import Comment from "./Comment.svelte";
+  import Replies from "./Replies.svelte";
 
-  // console.log(data)
-  let comments = data.comments
+  let comments = data.comments;
+  console.log(data.currentUser)
 </script>
 
 <section>
   {#each comments as comment}
-    <Comment imageURL={comment.user.image.png}
+    <Comment
+      imageURL={comment.user.image.png}
       username={comment.user.username}
       datePosted={comment.createdAt}
       text={comment.content}
     />
+    {#if comment.replies}
+      <Replies replies={comment.replies} />
+    {/if}
   {/each}
 </section>
 
 <style>
-  section{
+  section {
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
+    gap: 1em;
   }
 </style>
