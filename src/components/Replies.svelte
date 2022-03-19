@@ -1,7 +1,6 @@
 <script>
   import Comment from "./Comment.svelte";
   export let replies;
-  console.log(replies);
 </script>
 
 <section>
@@ -12,6 +11,7 @@
       datePosted={reply.createdAt}
       text={reply.content}
       replyingTo={reply.replyingTo}
+      upvotes={reply.score}
     />
   {/each}
 </section>

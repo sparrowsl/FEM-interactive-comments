@@ -1,5 +1,7 @@
 <script>
 	import data from "../../data.json";
+	import ReplyButton from "./ReplyButton.svelte";
+	import Vote from "./Vote.svelte";
 
 	let currentUser = data.currentUser;
 
@@ -9,6 +11,7 @@
 	export let text;
 	export let isReply = false;
 	export let replyingTo = "";
+	export let upvotes = 0;
 </script>
 
 <div class="comment-card" class:is-reply={isReply}>
@@ -33,6 +36,11 @@
 	{:else}
 		<p class="comment">{text}</p>
 	{/if}
+
+	<div class="votes">
+		<Vote {upvotes} />
+		<ReplyButton />
+	</div>
 </div>
 
 <style>
@@ -83,5 +91,10 @@
 	.profile-img img {
 		width: 35px;
 		height: 35px;
+	}
+	.votes {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 </style>

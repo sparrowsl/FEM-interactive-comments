@@ -3,7 +3,7 @@
 </script>
 
 <main>
-	<Comments/>
+	<Comments />
 </main>
 
 <style>
