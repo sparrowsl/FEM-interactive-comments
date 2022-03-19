@@ -6,7 +6,6 @@
 
   let comments = data.comments;
 	console.log(data.comments)
-
 </script>
 
 <section>

@@ -1,4 +1,6 @@
 <script>
+import Button from "./Button.svelte";
+
   export let currentUserImageURL;
   export let currentUsername;
 </script>
@@ -13,7 +15,7 @@
       <img src={currentUserImageURL} alt="{currentUsername}" loading="lazy" />
 
       <!-- Send button -->
-      <button type="submit">Send</button>
+      <Button buttonType="submit">Send</Button>
     </div>
   </form>
 </section>
@@ -49,25 +51,9 @@
     width: 40px;
     height: 40px;
   }
-  .send button {
-    background-color: hsl(238, 40%, 52%);
-    border: 0;
-    border-radius: 5px;
-    padding: .8em 2em;
-    font-size: 1.5rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: hsl(0, 0%, 100%);
-  }
-
   @media screen and (min-width: 768px) {
     textarea {
       min-height: 150px;
-    }
-    .send button:hover {
-      background-color: hsl(239, 57%, 85%);
-      transition: background-color 0.15s;
-      cursor: pointer;
     }
   }
 </style>

@@ -24,4 +24,12 @@
     border-left: 2px solid hsl(223, 19%, 93%);
     padding-left: 1.75em;
   }
+
+  /* // Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    section {
+      padding-left: 2.75em;
+      margin-left: 1em;
+    }
+  }
 </style>

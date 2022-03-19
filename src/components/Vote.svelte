@@ -1,6 +1,6 @@
 <script>
   export let upvotes = 0;
-  export let hide4mobile = false;
+  export let hide4mobile = true;
 </script>
 
 <div class="upvotes" class:hide-mobile={hide4mobile}>
@@ -38,7 +38,10 @@
 
   @media screen and (min-width: 768px){
     .hide-mobile{
-      display: block;
+      display: flex;
+    }
+    button:hover{
+      cursor: pointer;
     }
   }
 </style>
