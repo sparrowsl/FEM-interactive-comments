@@ -2,14 +2,12 @@
   import data from "../../data.json";
   import Comment from "./Comment.svelte";
   import Replies from "./Replies.svelte";
-  import NewComment from "./NewComment.svelte";
-
-  let comments = data.comments;
-	console.log(data.comments)
+  import CreateNewComment from "./CreateNewComment.svelte";
 </script>
 
 <section>
-  {#each comments as comment (comment.id)}
+  <!-- Loop through the comments from the data imported -->
+  {#each data.comments as comment (comment.id)}
     <Comment
       imageURL={comment.user.image.png}
       username={comment.user.username}
@@ -22,15 +20,14 @@
     {/if}
   {/each}
 </section>
-<NewComment
-  currentUserImageURL={data.currentUser.image.png}
+<CreateNewComment
+  userImageURL={data.currentUser.image.png}
   currentUsername={data.currentUser.username}
 />
 
 <style>
   section {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+    display: grid;
+    grid-gap: 1em;
   }
 </style>

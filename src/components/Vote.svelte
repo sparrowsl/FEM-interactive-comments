@@ -1,46 +1,42 @@
 <script>
+  import Icon from "./Icon.svelte";
+
   export let upvotes = 0;
-  export let hide4mobile = true;
 </script>
 
-<div class="upvotes" class:hide-mobile={hide4mobile}>
+<div class="upvotes">
   <button type="button" class="plus-vote" on:click={() => upvotes++}>
-    <img src="./images/icon-plus.svg" alt="add votes" />
+    <Icon iconImage="./images/icon-plus.svg" />
   </button>
 
-  <p>{upvotes}</p>
+  <span>{upvotes}</span>
 
   <button type="button" class="minus-vote" on:click={() => upvotes--}>
-    <img src="./images/icon-minus.svg" alt="minus votes" />
+    <Icon iconImage="./images/icon-minus.svg" />
   </button>
 </div>
 
 <style>
   .upvotes {
+    padding: 1em;
     display: flex;
-    gap: 1em;
+    gap: 1.7em;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
     background-color: hsl(228, 33%, 97%);
   }
-  .hide-mobile{
-    display: none;
-  }
   button {
     border: none;
-    padding: 0 1em;
+    padding: 0 0.5em;
     background-color: transparent;
   }
-  .upvotes p {
+  .upvotes span {
     font-size: 1.45rem;
   }
 
-  @media screen and (min-width: 768px){
-    .hide-mobile{
-      display: flex;
-    }
-    button:hover{
+  @media screen and (min-width: 768px) {
+    button:hover {
       cursor: pointer;
     }
   }

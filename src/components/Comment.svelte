@@ -1,6 +1,7 @@
 <script>
 	import data from "../../data.json";
-	import ReplyButton from "./ReplyButton.svelte";
+	import DeleteAndEdit from "./DeleteAndEdit.svelte";
+	import Icon from "./Icon.svelte";
 	import Vote from "./Vote.svelte";
 
 	let currentUser = data.currentUser;
@@ -39,7 +40,16 @@
 
 	<div class="votes">
 		<Vote {upvotes} />
-		<ReplyButton />
+		<!-- Remove reply button for current user -->
+		{#if username === currentUser.username}
+			<DeleteAndEdit />
+		{:else}
+			<Icon
+				iconImage="./images/icon-reply.svg"
+				iconName="Reply"
+				color="hsl(238, 40%, 52%)"
+			/>
+		{/if}
 	</div>
 </div>
 

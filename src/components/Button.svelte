@@ -2,12 +2,13 @@
   export let buttonType = "button";
 </script>
 
-<button type="{buttonType}">
+<button type={buttonType}>
   <slot>Button</slot>
 </button>
 
 <style>
   button {
+    max-width: fit-content;
     background-color: hsl(238, 40%, 52%);
     border: 0;
     border-radius: 5px;
@@ -16,6 +17,9 @@
     font-weight: 500;
     text-transform: uppercase;
     color: hsl(0, 0%, 100%);
+
+    grid-area: button;
+    justify-self: flex-end;
   }
 
   @media screen and (min-width: 768px) {

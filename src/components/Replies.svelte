@@ -18,18 +18,26 @@
 
 <style>
   section {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
+    display: grid;
+    grid-gap: 1.5em;
     border-left: 2px solid hsl(223, 19%, 93%);
-    padding-left: 1.75em;
+    padding-left: 5vw;
+    margin-left: 2.5vw;
+  }
+
+  /* // Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    section {
+      padding-left: 4vw;
+      margin-left: 2.5vw;
+    }
   }
 
   /* // Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
     section {
-      padding-left: 2.75em;
-      margin-left: 1em;
+      padding-left: 3vw;
+      margin-left: 1.5vw;
     }
   }
 </style>
