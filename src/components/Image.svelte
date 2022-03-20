@@ -1,7 +1,7 @@
 <script>
   export let src;
-  export let width = "40px";
-  export let height = "40px";
+  export let width = "35px";
+  export let height = "35px";
   export let alt = "picture";
 </script>
 

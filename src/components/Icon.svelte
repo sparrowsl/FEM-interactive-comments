@@ -14,6 +14,7 @@
     border: none;
     background-color: transparent;
     font-family: "Rubik", sans-serif;
+    grid-area: icon;
   }
   .icon-name {
     font-size: 1.5rem;

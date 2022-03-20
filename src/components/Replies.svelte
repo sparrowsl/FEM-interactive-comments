@@ -1,11 +1,11 @@
 <script>
-  import Comment from "./Comment.svelte";
+  import CommentCard from "./CommentCard.svelte";
   export let replies;
 </script>
 
 <section>
   {#each replies as reply}
-    <Comment
+    <CommentCard
       imageURL={reply.user.image.png}
       username={reply.user.username}
       datePosted={reply.createdAt}

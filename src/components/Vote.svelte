@@ -18,15 +18,17 @@
 
 <style>
   .upvotes {
-    padding: 1em;
+    padding: 1.2em 1em;
     display: flex;
-    gap: 1.7em;
+    gap: 1.35em;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
     background-color: hsl(228, 33%, 97%);
+    grid-area: vote;
   }
   button {
+    height: 100%;
     border: none;
     padding: 0 0.5em;
     background-color: transparent;
@@ -38,6 +40,11 @@
   @media screen and (min-width: 768px) {
     button:hover {
       cursor: pointer;
+    }
+    .upvotes {
+      flex-direction: column;
+      height: fit-content;
+      align-self: start;
     }
   }
 </style>

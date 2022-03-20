@@ -1,6 +1,6 @@
 <script>
   import data from "../../data.json";
-  import Comment from "./Comment.svelte";
+  import CommentCard from "./CommentCard.svelte";
   import Replies from "./Replies.svelte";
   import CreateNewComment from "./CreateNewComment.svelte";
 </script>
@@ -8,7 +8,7 @@
 <section>
   <!-- Loop through the comments from the data imported -->
   {#each data.comments as comment (comment.id)}
-    <Comment
+    <CommentCard
       imageURL={comment.user.image.png}
       username={comment.user.username}
       datePosted={comment.createdAt}
