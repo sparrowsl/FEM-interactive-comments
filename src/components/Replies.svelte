@@ -4,15 +4,8 @@
 </script>
 
 <section>
-  {#each replies as reply}
-    <CommentCard
-      imageURL={reply.user.image.png}
-      username={reply.user.username}
-      datePosted={reply.createdAt}
-      text={reply.content}
-      replyingTo={reply.replyingTo}
-      upvotes={reply.score}
-    />
+  {#each replies as reply (reply.id)}
+    <CommentCard comment={reply} />
   {/each}
 </section>
 

@@ -54,6 +54,10 @@ Users should be able to:
 
 ### What I learned
 
+- Using svelte store to share state between components.
+- Event handlers to handle functions outside of a component
+- Dynamic CSS classes
+
 Install plugin to fetch data from a local file in the root of the project
 
 ```bash
@@ -78,6 +82,8 @@ import data from 'path/to/file.json';
 ### Continued development
 
 - Event handlers
+- Svelte stores
+- Event Dispatchers
 
 ### Useful resources
 

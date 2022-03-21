@@ -4,7 +4,7 @@
   export let color = "hsl(238, 40%, 52%)";
 </script>
 
-<button class="" style="color: {color}">
+<button class="" style="color: {color}" on:click>
   <img src={iconImage} alt="{iconName} icon" loading="lazy" />
   <span class="icon-name">{iconName}</span>
 </button>

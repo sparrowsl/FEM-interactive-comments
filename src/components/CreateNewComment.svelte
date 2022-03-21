@@ -1,26 +1,41 @@
 <script>
-  import Button from "./Button.svelte";
-  import Image from "./Image.svelte";
-  import Textarea from "./Textarea.svelte";
+  import { commentsList, currentUser } from "../stores/store.js";
+  import Button from "./shared/Button.svelte";
+  import Image from "./shared/Image.svelte";
+  import Textarea from "./shared/Textarea.svelte";
 
   export let userImageURL;
-  export let currentUsername;
-  let userComment;
+  export let username;
+  export let buttonText = "Send";
+  export let replyingTo = "";
 
-  function addCommentToCommentsList() {
-    console.log(userComment);
+  let userComment = replyingTo ? `@${replyingTo} ` : "";
 
-    // Clear the textarea
+  function addCommentToStore() {
+    const userData = {
+      // eg: '$commentsList.length++ spits out error'
+      id: $commentsList.length + 1,
+      content: userComment,
+      createdAt: "1 minutes ago",
+      score: 0,
+      user: $currentUser,
+      replies: [],
+    };
+    console.log(userData);
+
+    // Update the store with new array
+    $commentsList = [...$commentsList, userData];
+    // // Clear the textarea
     userComment = "";
   }
 </script>
 
 <section class="new-comment">
-  <form action="" on:submit|preventDefault={addCommentToCommentsList}>
+  <form action="" on:submit|preventDefault={addCommentToStore}>
     <!-- Image component comes first because of the flexbox used at desktop screens -->
-    <Image src={userImageURL} alt={currentUsername} />
+    <Image src={userImageURL} alt={username} />
     <Textarea placeholder="Add a comment..." bind:text={userComment} />
-    <Button buttonType="submit">Send</Button>
+    <Button buttonType="submit">{buttonText}</Button>
   </form>
 </section>
 
@@ -38,11 +53,10 @@
     grid-template-areas:
       "textarea textarea"
       "image button";
-    /* justify-content: space-between; */
   }
 
   @media screen and (min-width: 768px) {
-    form{
+    form {
       display: flex;
       align-items: flex-start;
     }

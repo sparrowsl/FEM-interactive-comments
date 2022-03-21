@@ -1,21 +1,21 @@
 <script>
-  import Image from "./Image.svelte";
+  import { currentUser } from "../stores/store.js";
+  import Image from "./shared/Image.svelte";
 
-  export let username;
-  export let datePosted = "2 days ago";
-  export let userImage;
+  export let datePosted = "1 day ago";
+  export let user;
 </script>
 
 <div class="user-info">
-  <Image src={userImage} alt="{username}'s' profile" />
+  <Image src={user.image.webp} alt="{user.username}'s' profile" />
 
-  {#if username === "juliusomo"}
+  {#if user.username === $currentUser.username}
     <!-- Add a 'you' tag if its the current user -->
     <p class="username">
-      <strong>{username}</strong> <span class="tag">you</span>
+      <strong>{user.username}</strong> <span class="tag">you</span>
     </p>
   {:else}
-    <p class="username"><strong>{username}</strong></p>
+    <p class="username"><strong>{user.username}</strong></p>
   {/if}
   <p class="datePosted">{datePosted}</p>
 </div>

@@ -1,14 +1,16 @@
 <script>
 	import Comments from "./components/Comments.svelte";
+	import DeleteModal from "./components/DeleteModal.svelte";
 </script>
 
 <main>
 	<Comments />
 </main>
+<DeleteModal />
 
 <style>
 	main {
-		padding: 1em;
+		padding: 2em 1em;
 	}
 
 	/* // Small devices (landscape phones, 576px and up) */
@@ -17,7 +19,7 @@
 
 	/* // Medium devices (tablets, 768px and up) */
 	@media (min-width: 768px) {
-		main{
+		main {
 			margin-inline: auto;
 			max-width: 80%;
 		}

@@ -5,7 +5,7 @@
   export let alt = "picture";
 </script>
 
-<img src={src} {alt} {width} {height} loading="lazy" />
+<img src="{src}" {alt} {width} {height} loading="lazy" />
 
 <style>
   img {

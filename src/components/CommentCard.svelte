@@ -1,33 +1,28 @@
 <script>
-	import data from "../../data.json";
+	import { currentUser } from "../stores/store.js";
 	import DeleteAndEdit from "./DeleteAndEdit.svelte";
-	import Icon from "./Icon.svelte";
-	import Text from "./Text.svelte";
+	import Icon from "./shared/Icon.svelte";
+	import Text from "./shared/Text.svelte";
 	import UserInfo from "./UserInfo.svelte";
-	import Vote from "./Vote.svelte";
+	import Vote from "./shared/Vote.svelte";
+	import CreateNewComment from "./CreateNewComment.svelte";
 
-	let currentUser = data.currentUser;
-
-	export let imageURL;
-	export let username;
-	export let datePosted;
-	export let text;
-	export let isReply = false;
-	export let replyingTo = "";
-	export let upvotes = 0;
+	export let comment;
+	let isReplyActive = false;
 </script>
 
-<article class="comment-card" class:is-reply={isReply}>
-	<UserInfo {username} {datePosted} userImage={imageURL} />
-	<Text isReplying={replyingTo} content={text} />
+<article class="comment-card">
+	<UserInfo user={comment.user} datePosted={comment.createdAt} />
+	<Text isReplying={comment.replyingTo} content={comment.content} />
 
 	<!-- Remove reply button for current user -->
-	<Vote {upvotes} />
+	<Vote upvotes={comment.score} />
 	<div class="update-or-reply">
-		{#if username === currentUser.username}
+		{#if comment.user.username === $currentUser.username}
 			<DeleteAndEdit />
 		{:else}
 			<Icon
+				on:click={() => (isReplyActive = true)}
 				iconImage="./images/icon-reply.svg"
 				iconName="Reply"
 				color="hsl(238, 40%, 52%)"
@@ -36,12 +31,22 @@
 	</div>
 </article>
 
+{#if isReplyActive}
+	<CreateNewComment
+		replyingTo={comment.user.username}
+		buttonText="Reply"
+		username={$currentUser.username}
+		userImageURL={$currentUser.image.webp}
+	/>
+{/if}
+
 <style>
 	.comment-card {
 		border-radius: 7px;
 		padding: 2em;
 		background-color: hsl(0, 0%, 100%);
 		display: grid;
+		grid-gap: 1em;
 		justify-content: space-between;
 		align-items: center;
 		grid-template-areas:
@@ -49,18 +54,12 @@
 			"text text text"
 			"vote . update-reply";
 	}
-	.is-reply {
-		width: 80%;
-		margin-inline-end: auto;
-		justify-self: flex-end;
-	}
 	.update-or-reply {
 		grid-area: update-reply;
 	}
 
 	@media screen and (min-width: 768px) {
 		.comment-card {
-			grid-gap: 2em;
 			grid-template-areas:
 				"vote user-info update-reply"
 				"vote text text"
