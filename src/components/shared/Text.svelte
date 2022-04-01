@@ -21,8 +21,8 @@
     color: hsl(238, 40%, 52%);
   }
 
-  @media screen and (min-width: 768px){
-    .comment{
+  @media screen and (min-width: 768px) {
+    .comment {
       font-size: 1.6rem;
       line-height: 1.6;
     }

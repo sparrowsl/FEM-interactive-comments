@@ -1,14 +1,10 @@
 <script>
+  import { isModalOpen } from "../stores/store.js";
   import Button from "./shared/Button.svelte";
   import Text from "./shared/Text.svelte";
-  import { isModalOpen } from "../stores/store.js";
 
   const modalMessage = `Are you sure you want to delete this comment?
         This will remove comment and can't be undone.`;
-  const displaySuccess = () => {
-    $isModalOpen = false;
-    alert("Comment has been deleted!!");
-  };
 </script>
 
 {#if $isModalOpen}
@@ -22,7 +18,7 @@
         <Button isTertiary={true} on:click={() => ($isModalOpen = false)}>
           No, Cancel
         </Button>
-        <Button isDanger={true} on:click={displaySuccess}>Yes, Delete</Button>
+        <Button isDanger={true} on:click>Yes, Delete</Button>
       </div>
     </div>
   </section>
@@ -33,7 +29,7 @@
     display: grid;
     justify-content: center;
     align-items: center;
-    background-color: hsla(0, 0%, 0%, 0.526);
+    background-color: hsla(0, 0%, 69%, 0.22);
     height: 100%;
     position: fixed;
     top: 0;

@@ -9,7 +9,7 @@
 <div class="user-info">
   <Image src={user.image.webp} alt="{user.username}'s' profile" />
 
-  {#if user.username === $currentUser.username}
+  {#if user.username === currentUser.username}
     <!-- Add a 'you' tag if its the current user -->
     <p class="username">
       <strong>{user.username}</strong> <span class="tag">you</span>

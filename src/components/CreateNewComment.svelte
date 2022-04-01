@@ -1,32 +1,35 @@
 <script>
-  import { commentsList, currentUser } from "../stores/store.js";
+  import { createEventDispatcher } from "svelte";
+  import { currentUser } from "../stores/store.js";
   import Button from "./shared/Button.svelte";
   import Image from "./shared/Image.svelte";
   import Textarea from "./shared/Textarea.svelte";
 
+  const dispatch = createEventDispatcher();
   export let userImageURL;
   export let username;
   export let buttonText = "Send";
   export let replyingTo = "";
 
-  let userComment = replyingTo ? `@${replyingTo} ` : "";
+  let userComment;
 
   function addCommentToStore() {
+    // const randomId =
     const userData = {
-      // eg: '$commentsList.length++ spits out error'
-      id: $commentsList.length + 1,
+      id: Date.now(),
       content: userComment,
-      createdAt: "1 minutes ago",
+      createdAt: "1 minute ago",
       score: 0,
-      user: $currentUser,
+      user: currentUser,
       replies: [],
     };
-    console.log(userData);
 
-    // Update the store with new array
-    $commentsList = [...$commentsList, userData];
-    // // Clear the textarea
-    userComment = "";
+    if (replyingTo) {
+      userData.replyingTo = replyingTo;
+    }
+
+    dispatch("addCommentToStore", userData);
+    userComment = ""; // Clear the textarea
   }
 </script>
 

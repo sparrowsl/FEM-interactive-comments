@@ -6,7 +6,6 @@
 <main>
 	<Comments />
 </main>
-<DeleteModal />
 
 <style>
 	main {
