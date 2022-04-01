@@ -13,7 +13,7 @@
     border: 2px solid hsl(223, 19%, 93%);
     border-radius: 5px;
     resize: none;
-    font-family: inherit;
+    font-family: "Rubik", sans-serif;
     grid-area: textarea;
   }
   textarea:focus {
