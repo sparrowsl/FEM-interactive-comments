@@ -1,6 +1,5 @@
 <script>
-import Image from "./Image.svelte";
-
+  import Image from "./Image.svelte";
 
   export let iconImage;
   export let iconName = "";
@@ -8,7 +7,7 @@ import Image from "./Image.svelte";
 </script>
 
 <button class="" style="color: {color}" on:click>
-  <Image src={iconImage} alt="{iconName} icon" width="initial" height="initial" />
+  <Image src={iconImage} alt="{iconName} icon" isDefault={false} />
   <span class="icon-name">{iconName}</span>
 </button>
 
@@ -25,7 +24,8 @@ import Image from "./Image.svelte";
   }
 
   @media screen and (min-width: 768px) {
-    button:hover, .icon-name:hover{
+    button:hover,
+    .icon-name:hover {
       cursor: pointer;
     }
     .icon-name:hover {
