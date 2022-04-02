@@ -5,42 +5,30 @@
 </script>
 
 <div class="upvotes">
-  <button type="button" class="plus-vote" on:click={() => upvotes++}>
-    <Icon iconImage="./images/icon-plus.svg" />
-  </button>
-
+  <!-- Increase the votes -->
+  <Icon iconImage="./images/icon-plus.svg" on:click={() => upvotes++} />
+    <!-- display the votes -->
   <span>{upvotes}</span>
-
-  <button type="button" class="minus-vote" on:click={() => upvotes--}>
-    <Icon iconImage="./images/icon-minus.svg" />
-  </button>
+  <!-- Decrease the votes -->
+  <Icon iconImage="./images/icon-minus.svg" on:click={() => upvotes--} />
 </div>
 
 <style>
   .upvotes {
-    padding: 1.2em 1em;
+    padding: 1.2em 1.5em;
     display: flex;
-    gap: 1.35em;
+    gap: 1.5em;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
     background-color: hsl(228, 33%, 97%);
     grid-area: vote;
   }
-  button {
-    height: 100%;
-    border: none;
-    padding: 0 0.5em;
-    background-color: transparent;
-  }
   .upvotes span {
     font-size: 1.45rem;
   }
 
   @media screen and (min-width: 768px) {
-    button:hover {
-      cursor: pointer;
-    }
     .upvotes {
       flex-direction: column;
       height: fit-content;

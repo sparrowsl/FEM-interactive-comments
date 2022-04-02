@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./design/desktop-preview.jpg)
 
 ### Links
 
@@ -47,7 +47,7 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-<!-- - CSS Grid -->
+- CSS Grid
 - Mobile-first workflow
 - [Svelte](https://svelte.dev/) - JS framework
 
@@ -55,7 +55,9 @@ Users should be able to:
 ### What I learned
 
 - Using svelte store to share state between components.
-- Event handlers to handle functions outside of a component
+- Event handlers
+  - Custom events (to handle functions outside of a component)
+  - Event Dispatchers
 - Dynamic CSS classes
 
 Install plugin to fetch data from a local file in the root of the project
@@ -87,8 +89,7 @@ import data from 'path/to/file.json';
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [@rollup/plugin-json](https://www.npmjs.com/package/@rollup/plugin-json) - This helped me fetch JSON data from local files inside the project.
 
 
 ## Author
@@ -130,5 +131,3 @@ npm run dev
 ```
 
 Navigate to [localhost:8080](http://localhost:8080). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
-
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.

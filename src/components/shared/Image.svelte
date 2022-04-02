@@ -1,11 +1,11 @@
 <script>
   export let src;
-  export let width = "35px";
-  export let height = "35px";
+  export let width = 35;
+  export let height = 35;
   export let alt = "picture";
 </script>
 
-<img src="{src}" {alt} {width} {height} loading="lazy" />
+<img src="{src}" {alt} {width} {height} />
 
 <style>
   img {
