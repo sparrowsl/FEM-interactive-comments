@@ -1,11 +1,14 @@
 <script>
+import Image from "./Image.svelte";
+
+
   export let iconImage;
   export let iconName = "";
   export let color = "hsl(238, 40%, 52%)";
 </script>
 
 <button class="" style="color: {color}" on:click>
-  <img src={iconImage} alt="{iconName} icon" loading="lazy" />
+  <Image src={iconImage} alt="{iconName} icon" width="initial" height="initial" />
   <span class="icon-name">{iconName}</span>
 </button>
 
