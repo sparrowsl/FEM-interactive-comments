@@ -38,7 +38,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution URL here](https://github.com/benjithorpe/FEM-interactive-comments)
-- Live Site URL: [Live site URL here](https://fem-interactive-comments.vercel.app/)
+- Live Site URL: [Live site URL here](https://fem-interactive-comments.netlify.app/)
 
 ## My process
 
